@@ -24,6 +24,7 @@ jobs:
           node-version: 14
       - run: npm ci
       - run: npm test
+      - run: echo ${{ github.ref }}
 
   deploy:
     runs-on: ubuntu-latest
