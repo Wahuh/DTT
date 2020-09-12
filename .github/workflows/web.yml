@@ -24,7 +24,6 @@ jobs:
           node-version: 14
       - run: npm ci
       - run: npm test
-      - run: echo ${{ github.ref }}
 
   deploy:
     runs-on: ubuntu-latest
@@ -36,4 +35,4 @@ jobs:
         with:
           node-version: 14
       - run: npm i -g vercel
-      - run: vercel --token ${{ secrets.VERCEL_ACCESS_TOKEN }} --confirm --name {{ secrets.VERCEL_PROJECT_NAME }} --prod
+      - run: vercel --token ${{ secrets.VERCEL_ACCESS_TOKEN }} --confirm --name ${{ secrets.VERCEL_PROJECT_NAME }} --prod
